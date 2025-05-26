@@ -30,7 +30,7 @@
   </div>
   <div class="mb-3">
     <label for="img" class="form-label">kép</label>
-    <input type="text" class="form-control" id="img" name="img">
+    <input type="file" name="img" id="img" accept="image/png, image/gif, image/jpeg" />
   </div>
   <div class="mb-3 form-check">
     <input type="checkbox" class="form-check-input" id="completed" name="completed">

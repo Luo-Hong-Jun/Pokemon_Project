@@ -21,8 +21,16 @@
             case 'new':
                 include_once "PokemonModifyData.php";
                 break;
-            case 'modify':
-                include_once "PokemonModifyData.php";
+            case 'add':
+                $name = htmlspecialchars($_POST['name']);
+                $type = htmlspecialchars($_POST['type']);
+                $skill1 = htmlspecialchars($_POST['skill1']);
+                $skill2 = htmlspecialchars($_POST['skill2']);
+                $skill3 = htmlspecialchars($_POST['skill3']);
+                $skill4 = htmlspecialchars($_POST['skill4']);
+                $gender = htmlspecialchars($_POST['gender']);
+                $img = htmlspecialchars($_POST['img']);
+                $solutions->addPokemon($name, $type,$img,$skill1,$skill2,$skill3,$skill4, $gender);
                 break;
             case 'del':
                 $id = htmlspecialchars($_POST['id']);
