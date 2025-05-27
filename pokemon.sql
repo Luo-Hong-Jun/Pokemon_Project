@@ -1,3 +1,7 @@
+CREATE DATABASE pokemons
+	CHARACTER SET utf8mb4
+	COLLATE utf8mb4_hungarian_ci;
+
 CREATE TABLE pokemons.pokemon_table (
   id INT(11) NOT NULL AUTO_INCREMENT,
   name VARCHAR(50) DEFAULT NULL,

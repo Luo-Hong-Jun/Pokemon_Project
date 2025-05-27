@@ -1,0 +1,13 @@
+.form {
+    text-align: center;
+}
+
+.size {
+    width: 50vh;
+    margin: auto;
+}
+
+.bg_size{
+    width: inherit;
+    height: inherit;
+}
