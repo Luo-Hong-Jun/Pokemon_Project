@@ -14,11 +14,20 @@ class PokemonFuncs{
     function Pokemons_Data() {
         $sql = "SELECT * FROM pokemon_table";
         $result = $this->conn->query($sql);
-        $tasks = [];
+        $pokemons = [];
         while ($row = $result->fetch_object()) {
-            $tasks[] = new Pokemon($row->id, $row->name, $row->type, $row->img, $row->skill1, $row -> skill2,$row->skill3, $row->skill4, $row->gender);
+            $pokemons[] = new Pokemon($row->id, $row->name, $row->type, $row->img, $row->skill1, $row -> skill2,$row->skill3, $row->skill4, $row->gender);
         }
-        return $tasks;
+        return $pokemons;
+    }
+
+        function GetPokemon($id) {
+        $sql = "SELECT * FROM pokemon_table WHERE id = $id";
+        $result = $this->conn->query($sql);
+        while ($row = $result->fetch_object()) {
+            $pokemon = new Pokemon($row->id, $row->name, $row->type, $row->img, $row->skill1, $row -> skill2,$row->skill3, $row->skill4, $row->gender);
+        }
+        return $pokemon;
     }
 
     function addPokemon($name,  $type,  $img,  $skill1, $skill2, $skill3, $skill4,  $gender) {

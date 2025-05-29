@@ -13,14 +13,17 @@
     <div class="container">
         <?php
         include_once "pokemon_stats_funcs.php";
-        $todo = $_GET['todo'] ?? 'team';
+        $todo = $_GET['todo'] ?? 'show';
         $solutions = new PokemonFuncs("localhost", "root", "", "pokemons");
         switch ($todo) {
-            case 'team':
-                include_once "PokemonShow.php";
+            case 'show':
+                include_once "PokemonShowImgs.php";
                 break;
             case 'new':
                 include_once "PokemonModifyData.php";
+                break;
+            case 'data':
+                include_once "PokemonShowData.php";
                 break;
             case 'add':
                 $name = htmlspecialchars($_POST['name']);
@@ -30,13 +33,28 @@
                 $skill3 = htmlspecialchars($_POST['skill3']);
                 $skill4 = htmlspecialchars($_POST['skill4']);
                 $gender = htmlspecialchars($_POST['gender']);
-                $img = htmlspecialchars($_POST['img']);
+                $img = "";
+                if (isset($_FILES['img']) && $_FILES['img']['error'] === 0) {
+                    $uploadDir = 'uploads/';
+                    $filename = basename($_FILES['img']['name']);
+                    $targetPath = $uploadDir . $filename;
+                    if (!is_dir($uploadDir)) {
+                        mkdir($uploadDir, 0755, true);
+                    }
+                    if (move_uploaded_file($_FILES['img']['tmp_name'], $targetPath)) {
+                        $img = $targetPath;
+                    } else {
+                        echo "A kép feltöltése nem sikerült.";
+                        exit;
+                    }
+                }
                 $solutions->addPokemon($name, $type,$img,$skill1,$skill2,$skill3,$skill4, $gender);
                 header("Location: index.php");
                 break;
             case 'del':
-                $id = htmlspecialchars($_POST['id']);
+                $id = htmlspecialchars($_GET['id']);
                 $solutions->deletePokemon($id);
+                header("Location: index.php");
                 break;
         }
         ?>

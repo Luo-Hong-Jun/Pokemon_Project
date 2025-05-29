@@ -1,6 +1,6 @@
 <div class="bg_size">
-  <h2 class="my-3" style="text-align: center;font-weight: bold;" >Pokemon felvétele</h2>
-    <form method="POST" action="?todo=add" class="form">
+  <h2 class="my-3" style="text-align: center;font-weight: bold;">Pokemon felvétele</h2>
+    <form method="POST" action="?todo=add" class="form" enctype="multipart/form-data">
       <div class="mb-3">
         <label for="name" class="form-label">Név</label>
         <input type="text" class="form-control size" id="name" name="name">
