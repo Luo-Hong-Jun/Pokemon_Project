@@ -8,7 +8,12 @@
                             <div style='height: 50vh;'>
                                 <img class='mx-auto d-block imgSize' src='$pokemon->img' alt='$pokemon->img'>
                             </div>
-                            <div style='height: 49vh;'>
+                            <div class='row' style='height: 49vh;'>
+                            <div class='col-3'></div>
+                                 <div class='col-6' style='height: inherit;'>
+                                 
+                                 </div>
+                            <div class='col-3'></div>
                             </div>
                         </div>
                         <div class='col-3'>
@@ -17,4 +22,4 @@
                         </div>
                     </div>";
 ?>
-<div ></div>
+<div style=""></div>
