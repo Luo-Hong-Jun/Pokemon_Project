@@ -20,3 +20,33 @@ a {
     max-height: 100%;
     max-width: 100%;
 }
+
+.pokemonName{
+    font-size: 3rem;
+    vertical-align: middle;
+    text-align: center;
+    line-height: inherit;
+    margin: auto;
+}
+
+.texts{
+    font-size: 1.7rem;
+}
+
+.marginLeft{
+    margin-left: 20px;
+}
+
+body{
+    font-family: 'Pokemon Solid', sans-serif;
+}
+
+.blackShadow{
+    text-shadow: 1px 1px 2px black;
+}
+
+.borderIMG{
+    border: 5px solid black;
+    border-radius: 50%;
+    ;
+}
