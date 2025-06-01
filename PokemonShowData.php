@@ -51,14 +51,14 @@
                             </div>
                         </div>
                         <div class='col-3'>
-                            <div class='row'>
-                                <a href='?todo=del&id=$pokemon->id'><button  class='btn btn-primary blackShadow'>Törlés</button></a></td>
+                            <div class='row' style='padding-top:20vh'>
+                                <a href='?todo=del&id=$pokemon->id'><button  class='btn btn-primary blackShadow buttonCenter''>Törlés</button></a></td>
                             </div>
                             <div class='row'>
-                                <a href='?todo=new&M_id=$pokemon->id&M_name=$pokemon->name&M_type=$pokemon->type&M_skill1=$pokemon->skill1&M_skill2=$pokemon->skill2&M_skill3=$pokemon->skill3&M_skill4=$pokemon->skill4&M_gender=$pokemon->gender'><button class='btn btn-primary blackShadow'>Módosítás</button></a>
+                                <a href='?todo=new&M_id=$pokemon->id&M_name=$pokemon->name&M_type=$pokemon->type&M_skill1=$pokemon->skill1&M_skill2=$pokemon->skill2&M_skill3=$pokemon->skill3&M_skill4=$pokemon->skill4&M_gender=$pokemon->gender'><button class='btn btn-primary blackShadow buttonCenter'>Módosítás</button></a>
                             </div>
                             <div class='row'>
-                                <a href='index.php'><button class='btn btn-primary blackShadow'>Kilépés</button></a>
+                                <a href='index.php'><button class='btn btn-primary blackShadow buttonCenter'>Kilépés</button></a>
                             </div>                                                        
                         </div>
                     </div>";

@@ -41,7 +41,7 @@ class PokemonFuncs{
     }
 
     function ModifyPokemon($id, $name,  $type,  $img,  $skill1, $skill2, $skill3, $skill4,  $gender) {
-        $sql = "UPDATE pokemon_table SET name = $name, type = $type, img = $img, skill1 = $skill1, skill2 = $skill2, skill3 = $skill3, skill4 = $skill4, gender = $gender  WHERE id = $id";
+        $sql = "UPDATE pokemon_table SET `name` = '$name', `type` = '$type', `img` = '$img', `skill1` = '$skill1', `skill2` = '$skill2', `skill3` = '$skill3', `skill4` = '$skill4', `gender` = '$gender'  WHERE id = $id";
         $this->conn->query($sql);
     }
 }

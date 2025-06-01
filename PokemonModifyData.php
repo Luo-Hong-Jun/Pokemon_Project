@@ -8,34 +8,6 @@
     $skill3 = $_GET['M_skill3'] ?? '';
     $skill4 = $_GET['M_skill4'] ?? '';
     $gender = $_GET['M_gender'] ?? '';
-
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $pokemonName = trim($_POST['name']) ?? '';
-        if (empty($pokemonName)) {
-            $NameEmpty = 'Please add name!';
-        }
-        $pokemonType = trim($_POST['type']) ?? '';
-        if (empty($pokemonName)){
-            $TypeEmpty = 'Please add type!';
-        }       
-        $skill = trim($_POST['skill1']) ?? '';
-        if (empty($skill)){
-            $Skill1Empty = 'Please add skill!';
-        }
-        $skill = trim($_POST['skill2']) ?? '';
-        if (empty($skill)){
-            $Skill2Empty = 'Please add skill!';
-        }
-        $skill = trim($_POST['skill3']) ?? '';
-        if (empty($skill)){
-            $Skill3Empty = 'Please add skill!';
-        }
-        $skill = trim($_POST['skill4']) ?? '';
-        if (empty($skill)){
-            $Skill4Empty = 'Please add skill!';
-        }
-    }
-
 ?>
 <div class="bg_size">
   <h2 class="my-3" style="text-align: center;font-weight: bold;"><?php 
@@ -51,44 +23,32 @@
     else{
       echo "?todo=add";
     }?> class="form" enctype="multipart/form-data">
-      <div class="mb-3" style="visibility: hidden;">
-        <input type="text" name="id" class="form-control size" value=<?php echo $id ?>>
+      <div style="visibility: hidden;position:absolute;">
+        <input type="text" name="id" class="form-control size" value='<?php echo $id ?>' required>
       </div>
       <div class="mb-3">
         <label for="name" class="form-label">Név</label>
-        <input type="text" class="form-control size <?php
-                    if (isset($NameEmpty)) echo ' is-invalid ';
-                ?>" id="name" name="name" value=<?php echo $name ?>>
+        <input type="text" class="form-control size" id="name" name="name" value='<?php echo $name ?>' required>
       </div>
       <div class="mb-3">
         <label for="type" class="form-label">típus</label>
-        <input type="text" class="form-control size <?php
-                    if (isset($TypeEmpty)) echo ' is-invalid ';
-                ?>" id="type" name="type" value=<?php echo $type ?>>
+        <input type="text" class="form-control size" id="type" name="type" value='<?php echo $type ?>' required>
       </div>
       <div class="mb-3">
         <label for="skill1" class="form-label">skill 1</label>
-        <input type="text" class="form-control size <?php
-                    if (isset($Skill1Empty)) echo ' is-invalid ';
-                ?>" id="skill1" name="skill1" value=<?php echo $skill1 ?>>
+        <input type="text" class="form-control size" id="skill1" name="skill1" value='<?php echo $skill1 ?>' required>
       </div>
       <div class="mb-3">
         <label for="skill2" class="form-label">skill 2</label>
-        <input type="text" class="form-control size <?php
-                    if (isset($Skill2Empty)) echo ' is-invalid ';
-                ?>" id="skill2" name="skill2" value=<?php echo $skill2 ?>>
+        <input type="text" class="form-control size" id="skill2" name="skill2" value='<?php echo $skill2 ?>' required>
       </div>
       <div class="mb-3">
         <label for="skill3" class="form-label">skill 3</label>
-        <input type="text" class="form-control size <?php
-                    if (isset($Skill3Empty)) echo ' is-invalid ';
-                ?>" id="skill3" name="skill3" value=<?php echo $skill3 ?>>
+        <input type="text" class="form-control size" id="skill3" name="skill3" value='<?php echo $skill3 ?>' required>
       </div>
       <div class="mb-3">
         <label for="skill4" class="form-label">skill 4</label>
-        <input type="text" class="form-control size <?php
-                    if (isset($Skill4Empty)) echo ' is-invalid ';
-                ?>" id="skill4" name="skill4" value=<?php echo $skill4 ?>>
+        <input type="text" class="form-control size" id="skill4" name="skill4" value='<?php echo $skill4 ?>' required>
       </div>
       <div class="mb-3">
           <div class="form-check form-check-inline">
@@ -115,9 +75,9 @@
       </div>
       <div class="mb-3" style="margin: auto;">
         <label for="img" class="form-label">kép</label>
-        <input type="file" class="size" name="img" id="img" accept="image/png, image/gif, image/jpeg"/>
+        <input type="file" class="size" name="img" id="img" accept="image/png, image/gif, image/jpeg" required/>
       </div>
       <button type="submit" class="btn btn-primary blackShadow">Felvesz</button>
-      <a href='index.php'><button class="btn btn-primary blackShadow" style="margin-left: 25px;">Kilépés</button></a>
+      <a href='index.php'><button type="button" class="btn btn-primary blackShadow" style="margin-left: 25px;">Kilépés</button></a>
     </form>
 </div>
